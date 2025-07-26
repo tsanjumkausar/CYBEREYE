@@ -68,7 +68,7 @@ Select the extension/ folder
 Extension is now active and scanning browser tabs
 
 🛠️ Tech Stack
-Layer	Technologies
+Layer	    Technologies
 Backend  	Python, Flask, Flask-CORS, SQLite
 Frontend	React, Axios, Tailwind CSS
 Extension	HTML, JavaScript, CSS
