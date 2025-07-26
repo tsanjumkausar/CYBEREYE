@@ -23,19 +23,6 @@ CyberEye is a real-time AI-powered phishing detection system that leverages the 
 6. Results are displayed to the user with full scan history.
 
 ---
-
-## 🗂️ Project Structure
-
-CyberEye/
-├── backend/ # Flask backend API and SQLite DB
-├── frontend/ # React frontend application
-├── extension/ # Chrome extension
-└── README.md
-
-yaml
-Copy
-Edit
-
 ---
 
 ## 🔧 Backend – Flask + SQLite
