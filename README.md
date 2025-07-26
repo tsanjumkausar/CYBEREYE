@@ -1,20 +1,59 @@
-### 🛠️ Backend Setup
+# 🛡️ CyberEye – AI-Powered Real-Time Phishing Detection
 
-1. Navigate to the backend directory:
+CyberEye is a real-time AI-powered phishing detection system that leverages the **Gemma LLM** for intelligent URL classification. It automatically identifies websites as **Phishing**, **Defacement**, **Malicious**, or **Benign**, providing detailed threat reasoning and maintaining a history of all scans via a Flask + SQLite backend. A Chrome Extension adds real-time scanning for open browser tabs, reducing phishing exposure by **98%**.
+
+---
+
+## 🧠 Classification Categories
+
+1. **Phishing** – Pretends to be a trusted site to steal personal data (e.g., login or banking).
+2. **Defacement** – A legitimate website that has been altered or defaced by hackers.
+3. **Malicious** – Delivers malware, spyware, or harmful code.
+4. **Benign** – Safe, trusted website with no harmful behavior.
+
+---
+
+## ⚙️ How It Works
+
+1. User visits the **React frontend** and inputs a URL.
+2. The URL is sent to the **Flask backend API**.
+3. The **Gemma LLM model** classifies the URL and provides reasoning.
+4. The classification result and reasoning are stored in a **SQLite database**.
+5. The **Chrome Extension** runs in real-time to scan browser tabs for phishing/malicious links.
+6. Results are displayed to the user with full scan history.
+
+---
+
+## 🗂️ Project Structure
+
+CyberEye/
+├── backend/ # Flask backend API and SQLite DB
+├── frontend/ # React frontend application
+├── extension/ # Chrome extension
+└── README.md
+
+yaml
+Copy
+Edit
+
+---
+
+## 🔧 Backend – Flask + SQLite
+
+### Setup
 
 ```bash
 cd backend
-
-2. (Optional but recommended) Create and activate a virtual environment:
+(Optional) Create a virtual environment:
 
 bash
 Copy
 Edit
-# On Windows
+# Windows
 python -m venv venv
 venv\Scripts\activate
 
-# On macOS/Linux
+# macOS/Linux
 python3 -m venv venv
 source venv/bin/activate
 Install dependencies:
@@ -23,50 +62,47 @@ bash
 Copy
 Edit
 pip install -r requirements.txt
-▶️ Running the Backend
-Run the Flask app with:
-
+Run the Backend
 bash
 Copy
 Edit
 python app.py
-The backend server will start on: http://localhost:5000
+Runs on: http://localhost:5000
 
-💻 Frontend – React
-The frontend is built using React and react-scripts.
-
+💻 Frontend – React + Tailwind CSS
 Setup
-Navigate to the frontend directory:
-
 bash
 Copy
 Edit
 cd frontend
-Install dependencies:
-
-bash
-Copy
-Edit
 npm install
-▶️ Running the Frontend
-Start the development server with:
-
+Run the Frontend
 bash
 Copy
 Edit
 npm start
-The frontend will be available at: http://localhost:3000
+Runs on: http://localhost:3000
 
-🧩 Chrome Extension
-The Chrome Extension scans tabs in real time to reduce phishing exposure.
-It is located in the extension/ directory.
+🧩 Chrome Extension – Real-Time Tab Scanner
+How to Install
+Go to chrome://extensions/
 
-🛠️ Technologies Used
-Backend: Python, Flask, Flask-CORS, SQLite
+Enable Developer Mode (top right)
 
-Frontend: React, Axios, Tailwind CSS
+Click Load Unpacked
 
-Browser Extension: HTML, JavaScript, CSS
+Select the extension/ folder
 
+Extension is now active and scanning browser tabs
+
+🛠️ Tech Stack
+Layer	Technologies
+Backend	Python, Flask, Flask-CORS, SQLite
+Frontend	React, Axios, Tailwind CSS
+Extension	HTML, JavaScript, CSS
+AI Model	Gemma LLM (via Together AI / GROQ API)
+
+📸 Screenshots (Optional)
+<!-- Add if needed ![Homepage](screenshots/home.png) ![Scan Result](screenshots/result.png) -->
 📜 License
 This project is licensed under the MIT License.
